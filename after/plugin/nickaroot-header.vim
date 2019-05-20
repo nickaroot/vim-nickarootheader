@@ -20,8 +20,8 @@ let s:asciiart = [
 			\"  ####       ####.me     "
 			\]
 
-let l:user = "nickaroot"
-let l:website = "nickaroot.me"
+let s:user = "nickaroot"
+let s:website = "nickaroot.me"
 
 let s:start		= '/*'
 let s:end		= '*/'
