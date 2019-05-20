@@ -6,7 +6,7 @@
 "    By: nickaroot <nickaroot@icloud.com>           +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2015/12/06 19:39:01 by nickaroot         #+#    #+#              "
-"    Updated: 2019/05/20 03:50:08 by glormell       ####       ####.me         "
+0
 "                                                                              "
 " **************************************************************************** "
 
@@ -19,6 +19,9 @@ let s:asciiart = [
 			\"   #+#       #+#+#       ",
 			\"  ####       ####.me     "
 			\]
+
+let l:user = "nickaroot"
+let l:website = "nickaroot.me"
 
 let s:start		= '/*'
 let s:end		= '*/'
@@ -89,9 +92,6 @@ function! s:line(n)
 		return s:textline("Updated: " . s:date() . " by " . s:user, s:ascii(a:n))
 	endif
 endfunction
-
-let l:user = "nickaroot"
-let l:website = "nickaroot.me"
 
 function! s:filename()
 	let l:filename = expand("%:t")
