@@ -1,12 +1,12 @@
 " **************************************************************************** "
 "                                                                              "
 "                                                         :::      ::::::::    "
-"    nickaroot-header.vim                               :+:      :+:    :+:    "
+"    nickaroot-header.vim                                :+:+:       :+:       "
 "                                                     +:+ +:+         +:+      "
 "    By: nickaroot <nickaroot@icloud.com>           +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2015/12/06 19:39:01 by nickaroot         #+#    #+#              "
-"    Updated: 2019/05/20 03:09:24 by glormell         ###   ########.fr        "
+"    Updated: 2019/05/20 03:50:08 by glormell       ####       ####.me         "
 "                                                                              "
 " **************************************************************************** "
 
@@ -82,35 +82,16 @@ function! s:line(n)
 	elseif a:n == 4 " filename
 		return s:textline(s:filename(), s:ascii(a:n))
 	elseif a:n == 6 " author
-		return s:textline("By: " . s:user() . " <" . s:mail() . ">", s:ascii(a:n))
+		return s:textline("By: " . s:user . " <" . s:website . ">", s:ascii(a:n))
 	elseif a:n == 8 " created
-		return s:textline("Created: " . s:date() . " by " . s:user(), s:ascii(a:n))
+		return s:textline("Created: " . s:date() . " by " . s:user, s:ascii(a:n))
 	elseif a:n == 9 " updated
-		return s:textline("Updated: " . s:date() . " by " . s:user(), s:ascii(a:n))
+		return s:textline("Updated: " . s:date() . " by " . s:user, s:ascii(a:n))
 	endif
 endfunction
 
-function! s:user()
-	let l:user = $USER
-	if exists('g:hdr42user')
-		let l:user = g:hdr42user
-	endif
-	if strlen(l:user) == 0
-		let l:user = "nickaroot"
-	endif
-	return l:user
-endfunction
-
-function! s:mail()
-	let l:mail = $MAIL
-	if exists('g:hdr42mail')
-		let l:mail = g:hdr42mail
-	endif
-	if strlen(l:mail) == 0
-		let l:mail = "nickaroot@icloud.com"
-	endif
-	return l:mail
-endfunction
+let l:user = "nickaroot"
+let l:website = "nickaroot.me"
 
 function! s:filename()
 	let l:filename = expand("%:t")
